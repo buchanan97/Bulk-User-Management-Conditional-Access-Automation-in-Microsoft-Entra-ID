@@ -154,10 +154,3 @@ $body = @{
 Invoke-MgEvaluateIdentityConditionalAccessPolicy -BodyParameter $body
 ✔ Equivalent to the Entra ID “What If” tool
 ✔ Confirms MFA enforcement
-
-📈 Automation Workflow Summary
-Step	Script	Purpose
-1	Import-Users.ps1	Bulk user provisioning
-2	Create-DynamicGroups.ps1	Attribute‑based group automation
-3	Create-CAPolicies.ps1	MFA enforcement via Conditional Access
-4	Evaluate-CA-Policy.ps1	Validate policy behavior
