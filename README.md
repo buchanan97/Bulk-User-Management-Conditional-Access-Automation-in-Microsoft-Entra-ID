@@ -89,9 +89,6 @@ Conditional Access enforces Zero Trust principles by requiring MFA, compliant de
 
 This lab includes a policy that enforces MFA for all targeted users.
 
-📸 Screenshot: Conditional Access Policy (MFA Enforcement)
-![Image Alt](image_url)
-
 🎯 6. Targeting Imported Users
 Policies can target:
 
