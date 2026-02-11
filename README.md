@@ -1,12 +1,13 @@
 # Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID
 This project demonstrates a complete workflow for bulk user onboarding, dynamic group automation, and Conditional Access policy configuration within Microsoft Entra ID. It includes CSV datasets, screenshots, and documentation outlining how to efficiently manage users at scale while enforcing modern Zero Trust security controls.
-
+Watch me build this lab here! : https://www.loom.com/share/075e945b42e04de192fb67e2336b96c1
+also here is a presentation of how this is done as well: https://docs.google.com/presentation/d/13plL8oJUnhl0lsL6VIrshJrWo10i65YvEBj5mNTl2s8/edit?usp=sharing
 📂 Repository Contents
 File	Description
 Corrected_Entra_Import_50.csv	Cleaned and validated CSV file used for bulk user import.
 Entra_Bulk_Import_Examsandbox.csv	Original CSV import file used in the Entra ID sandbox environment.
 Overview of Bulk User Management and Conditional Access Configuration in Entra ID Portal.pptx	Slide deck explaining the full workflow end-to-end.
-/screenshots/	Folder containing all screenshots used in this README.
+
 📌 Project Overview
 This repository provides a hands-on demonstration of:
 
@@ -37,10 +38,7 @@ usageLocation
 “The CSV file must include required columns like user principal name, display name, and additional attributes for Entra ID.”
 (from the PowerPoint)
 
-Screenshot: Bulk Upload Interface
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
-This screenshot shows the Entra ID bulk upload panel with a successfully uploaded CSV file.
 
 📥 2. Executing the Bulk Upload
 Uploading the CSV File
@@ -50,8 +48,6 @@ Entra ID → Users → Bulk Operations → Bulk Create
 
 Upload the CSV and validate the results.
 
-Screenshot: Bulk Upload Results
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
 All users in the sample file were successfully created.
 
@@ -70,23 +66,17 @@ Dynamic groups automatically assign users based on attributes such as department
 Example: IT Department Dynamic Group
 txt
 (user.department -eq "IT")
-Screenshot: Dynamic Rule for IT Department
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+
 
 Example: HR Department Dynamic Group
 txt
 (user.department -eq "HR")
-Screenshot: Dynamic Rule for HR Department
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
-Screenshot: Creating the HR Group
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
 🛡️ 5. Conditional Access Policy Configuration
 Conditional Access policies enforce Zero Trust principles by requiring MFA, compliant devices, or specific conditions before granting access.
 
-Screenshot: Conditional Access Policy (MFA for All)
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
 This policy enforces MFA for all targeted users.
 
@@ -101,14 +91,11 @@ Directory roles
 
 Guest/external users
 
-Screenshot: Selecting Groups for CA Policy
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
 📱 7. Configuring Device Platform Conditions
 Conditional Access allows filtering by device platform.
 
-Screenshot: Device Platform Condition
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
 
 🔐 8. MFA Enforcement
 MFA drastically reduces credential-based attacks.
@@ -119,8 +106,6 @@ MFA drastically reduces credential-based attacks.
 🧪 9. Validating Policies with the ‘What If’ Tool
 The What If tool simulates sign-in scenarios to test Conditional Access policies before deployment.
 
-Screenshot: What If Tool Simulation
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
 
 This simulation confirms that the MFA policy applies correctly.
 
