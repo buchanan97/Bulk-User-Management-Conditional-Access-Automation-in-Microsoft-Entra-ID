@@ -1,26 +1,28 @@
-# Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID
-This project demonstrates a complete workflow for bulk user onboarding, dynamic group automation, and Conditional Access policy configuration within Microsoft Entra ID. It includes CSV datasets, screenshots, and documentation outlining how to efficiently manage users at scale while enforcing modern Zero Trust security controls.
-Watch me build this lab here! https://www.loom.com/share/075e945b42e04de192fb67e2336b96c1
-Also here is a presentation of how this is done as well: https://docs.google.com/presentation/d/13plL8oJUnhl0lsL6VIrshJrWo10i65YvEBj5mNTl2s8/edit?usp=sharing.
+Bulk User Management & Conditional Access Automation in Microsoft Entra ID
+🎬 Watch Me Build This Lab  
+https://www.loom.com/share/075e945b42e04de192fb67e2336b96c1
 
-
+📊 Presentation Walkthrough  
+https://docs.google.com/presentation/d/13plL8oJUnhl0lsL6VIrshJrWo10i65YvEBj5mNTl2s8/edit?usp=sharing
 
 📌 Project Overview
-This repository provides a hands-on demonstration of:
+This project demonstrates a complete identity‑management workflow in Microsoft Entra ID, including:
 
-Bulk user creation using Entra ID’s CSV import process
+Bulk user onboarding using CSV import
 
-Dynamic group membership rules based on user attributes
+Dynamic group automation based on user attributes
 
-Conditional Access policy configuration (including MFA enforcement)
+Conditional Access policy configuration (MFA enforcement, platform conditions, Zero Trust controls)
 
 Policy validation using the What If simulation tool
 
+The goal is to show how organizations can scale identity lifecycle operations while maintaining strong security posture.
+
 🚀 1. Bulk User Upload in Entra ID
-Bulk upload enables administrators to create dozens or hundreds of users at once.
+Bulk upload allows administrators to create dozens or hundreds of users at once.
 
 Preparing the CSV File
-The CSV must include required fields such as:
+Your CSV must include required fields such as:
 
 userPrincipalName
 
@@ -32,87 +34,95 @@ department
 
 usageLocation
 
-“The CSV file must include required columns like user principal name, display name, and additional attributes for Entra ID.”
-(from the PowerPoint)
+“The CSV file must include required columns like user principal name, display name, and additional attributes for Entra ID.” — from the PowerPoint
 
-
+📸 Screenshot: CSV Dataset Used for Import
+attachment:ZSoU9pE9EiKuvyPsUYef3.png
 
 📥 2. Executing the Bulk Upload
-Uploading the CSV File
 Navigate to:
 
 Entra ID → Users → Bulk Operations → Bulk Create
 
 Upload the CSV and validate the results.
 
+📸 Screenshot: Uploading the CSV File
+attachment:ZjTRTZr94W3RS1hb6jNX7.png
 
-All users in the sample file were successfully created.
+✔ The CSV file was uploaded successfully.
 
 🔍 3. Post‑Upload Verification
 After the import completes:
 
-Review logs
+Review bulk operation logs
 
 Validate user attributes
 
-Confirm department values (critical for dynamic groups)
+Confirm department values (critical for dynamic group rules)
+
+📸 Screenshot: Bulk Operation Results
+attachment:TvoeeEE86avfbNCiQivay.png
+
+All users were created successfully.
 
 👥 4. Dynamic Group Membership Rules
 Dynamic groups automatically assign users based on attributes such as department.
 
-Example: IT Department Dynamic Group
+IT Department Dynamic Group Rule
 txt
 (user.department -eq "IT")
+📸 Screenshot: IT Dynamic Group Rule
+attachment:juQ2cBc15fHSHUq2TsJr9.png
 
-
-
-Example: HR Department Dynamic Group
+HR Department Dynamic Group Rule
 txt
 (user.department -eq "HR")
+📸 Screenshot: HR Dynamic Group Rule
+attachment:QBRCwbgz9jQ38JMYnGb4W.png
 
+📸 Screenshot: Creating the HR Dynamic Group
+attachment:xY6tptZS9pdLe6oh33Yti.png
+
+📸 Screenshot: IT Department Group Properties
+attachment:UnPzkAGRJXZGw3vEMnhtg.png
 
 🛡️ 5. Conditional Access Policy Configuration
-Conditional Access policies enforce Zero Trust principles by requiring MFA, compliant devices, or specific conditions before granting access.
+Conditional Access enforces Zero Trust principles by requiring MFA, compliant devices, or specific conditions before granting access.
 
+This lab includes a policy that enforces MFA for all targeted users.
 
-This policy enforces MFA for all targeted users.
+📸 Screenshot: Conditional Access Policy (MFA Enforcement)
+attachment:hS22HDeWrHY18d64N6mr8.png
 
 🎯 6. Targeting Imported Users
-You can target:
+Policies can target:
 
 Dynamic groups (recommended)
 
-Specific users
+Individual users
 
 Directory roles
 
 Guest/external users
 
+📸 Screenshot: Policy Targeting Groups
+attachment:LXLmev4GegoVsczuTbU7r.png
 
 📱 7. Configuring Device Platform Conditions
-Conditional Access allows filtering by device platform.
+Conditional Access allows filtering by device platform (Windows, macOS, iOS, Android, etc.).
 
-
+📸 Screenshot: Device Platform Condition
+attachment:B1wFChu8n7ztBVnjRm289.png
 
 🔐 8. MFA Enforcement
-MFA drastically reduces credential-based attacks.
+MFA significantly reduces credential‑based attacks.
 
-“Organizations enforcing MFA experience over 99.9% reduction in credential-based attacks.”
-(from the PowerPoint)
+“Organizations enforcing MFA experience over 99.9% reduction in credential-based attacks.” — from the PowerPoint
 
 🧪 9. Validating Policies with the ‘What If’ Tool
-The What If tool simulates sign-in scenarios to test Conditional Access policies before deployment.
+The What If tool simulates sign‑in scenarios to test Conditional Access policies before deployment.
 
+📸 Screenshot: What If Tool Showing MFA Policy Applied
+attachment:7mgQqFuiUcc5Sqy7y77us.png
 
-This simulation confirms that the MFA policy applies correctly.
-
-📈 Benefits of This Approach
-Scalability: Onboard 50+ users instantly
-
-Security: Enforce MFA and Zero Trust controls
-
-Automation: Dynamic groups reduce manual admin work
-
-Accuracy: CSV validation prevents misconfigured accounts
-
-Visibility: What If tool ensures policies behave as expected
+This confirms that the MFA policy applies correctly to the imported users.
