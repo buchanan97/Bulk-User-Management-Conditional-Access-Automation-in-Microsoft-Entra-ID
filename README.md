@@ -1,0 +1,2 @@
+# Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID
+This project demonstrates a complete workflow for bulk user onboarding, dynamic group automation, and Conditional Access policy configuration within Microsoft Entra ID. It includes CSV datasets, screenshots, and documentation outlining how to efficiently manage users at scale while enforcing modern Zero Trust security controls.
