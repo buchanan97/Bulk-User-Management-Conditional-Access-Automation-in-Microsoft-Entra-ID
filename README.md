@@ -36,7 +36,7 @@ usageLocation
 
 “The CSV file must include required columns like user principal name, display name, and additional attributes for Entra ID.” — from the PowerPoint
 
-📸 Screenshot:![Image Alt]([image_url](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/here_is_CSV_of_AD_users.png?raw=true))
+📸 Screenshot:!![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/here_is_CSV_of_AD_users.png?raw=true)
 
 📥 2. Executing the Bulk Upload
 Navigate to:
