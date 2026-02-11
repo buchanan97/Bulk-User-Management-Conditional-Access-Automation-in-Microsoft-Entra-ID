@@ -121,7 +121,6 @@ The What If tool simulates sign‑in scenarios to test Conditional Access polici
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/Enforced%20MFA%20for%20all%20users%20and%20groups.png?raw=true)
 
 This confirms that the MFA policy applies correctly to the imported users.
-
 📈 Benefits of This Approach
 Benefit	Description
 Scalability	Onboard 50+ users instantly
