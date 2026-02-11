@@ -46,7 +46,7 @@ Entra ID → Users → Bulk Operations → Bulk Create
 Upload the CSV and validate the results.
 
 📸 Screenshot: Uploading the CSV File
-attachment:ZjTRTZr94W3RS1hb6jNX7.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/Bulk_upload_csv_screenshot.png?raw=true)
 
 ✔ The CSV file was uploaded successfully.
 
@@ -60,7 +60,7 @@ Validate user attributes
 Confirm department values (critical for dynamic group rules)
 
 📸 Screenshot: Bulk Operation Results
-attachment:TvoeeEE86avfbNCiQivay.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/bulk_upload_of_50%20users_success.png?raw=true))
 
 All users were created successfully.
 
@@ -71,27 +71,26 @@ IT Department Dynamic Group Rule
 txt
 (user.department -eq "IT")
 📸 Screenshot: IT Dynamic Group Rule
-attachment:juQ2cBc15fHSHUq2TsJr9.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/dynamic_query_for_IT_Department.png?raw=true)
 
 HR Department Dynamic Group Rule
 txt
 (user.department -eq "HR")
 📸 Screenshot: HR Dynamic Group Rule
-attachment:QBRCwbgz9jQ38JMYnGb4W.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/human_resource_group_query_rules.png?raw=true)
 
 📸 Screenshot: Creating the HR Dynamic Group
-attachment:xY6tptZS9pdLe6oh33Yti.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/human_resource_group_setup.png?raw=true)
 
 📸 Screenshot: IT Department Group Properties
-attachment:UnPzkAGRJXZGw3vEMnhtg.png
-
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/IT_Group_Setup.png?raw=true)
 🛡️ 5. Conditional Access Policy Configuration
 Conditional Access enforces Zero Trust principles by requiring MFA, compliant devices, or specific conditions before granting access.
 
 This lab includes a policy that enforces MFA for all targeted users.
 
 📸 Screenshot: Conditional Access Policy (MFA Enforcement)
-attachment:hS22HDeWrHY18d64N6mr8.png
+![Image Alt](image_url)
 
 🎯 6. Targeting Imported Users
 Policies can target:
@@ -105,13 +104,13 @@ Directory roles
 Guest/external users
 
 📸 Screenshot: Policy Targeting Groups
-attachment:LXLmev4GegoVsczuTbU7r.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/Enforcing%20MFA%20FOR%20ALL%20IT%20USERS.png?raw=true)
 
 📱 7. Configuring Device Platform Conditions
 Conditional Access allows filtering by device platform (Windows, macOS, iOS, Android, etc.).
 
 📸 Screenshot: Device Platform Condition
-attachment:B1wFChu8n7ztBVnjRm289.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/mfa_setup_properties.png?raw=true)
 
 🔐 8. MFA Enforcement
 MFA significantly reduces credential‑based attacks.
@@ -122,6 +121,6 @@ MFA significantly reduces credential‑based attacks.
 The What If tool simulates sign‑in scenarios to test Conditional Access policies before deployment.
 
 📸 Screenshot: What If Tool Showing MFA Policy Applied
-attachment:7mgQqFuiUcc5Sqy7y77us.png
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/Enforced%20MFA%20for%20all%20users%20and%20groups.png?raw=true)
 
 This confirms that the MFA policy applies correctly to the imported users.
