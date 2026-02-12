@@ -2,7 +2,8 @@ Microsoft Entra ID: Bulk Management & Conditional Access Automation
 Project Overview
 This project demonstrates a comprehensive identity-management workflow within Microsoft Entra ID. The goal is to illustrate how organizations can scale identity lifecycle operations—such as onboarding and grouping—while maintaining a rigorous security posture through Zero Trust controls.
 
-🎬 Watch Me Build This Lab 📊 Presentation Walkthrough
+🎬 [Watch Me Build This Lab ](https://www.loom.com/share/075e945b42e04de192fb67e2336b96c1)
+📊 [Presentation Walkthrough](https://docs.google.com/presentation/d/13plL8oJUnhl0lsL6VIrshJrWo10i65YvEBj5mNTl2s8/edit?usp=sharing)
 
 
 1. Automated Identity Provisioning
