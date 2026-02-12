@@ -201,10 +201,6 @@ This lab implements **Explicit Verification**, a core Zero Trust pillar:
 
 ---
 
-## Contributing
-
-Feel free to submit issues or suggestions to improve this lab!
-
 ---
 
 **Last Updated**: February 2026
