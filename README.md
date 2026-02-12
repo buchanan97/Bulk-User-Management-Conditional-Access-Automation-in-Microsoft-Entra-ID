@@ -1,25 +1,16 @@
-Bulk User Management & Conditional Access Automation in Microsoft Entra ID
+Microsoft Entra ID: Bulk Management & Conditional Access Automation
+Project Overview
+This project demonstrates an end-to-end identity management and security workflow within Microsoft Entra ID. It focuses on the technical implementation of bulk user lifecycle management, attribute-based dynamic grouping, and the enforcement of Zero Trust security principles through automated Conditional Access policies.
+
 🎬 Watch Me Build This Lab  
 https://www.loom.com/share/075e945b42e04de192fb67e2336b96c1
 
 📊 Presentation Walkthrough  
 https://docs.google.com/presentation/d/13plL8oJUnhl0lsL6VIrshJrWo10i65YvEBj5mNTl2s8/edit?usp=sharing
 
-📌 Project Overview
-This project demonstrates a complete identity‑management workflow in Microsoft Entra ID, including:
 
-Bulk user onboarding using CSV import
-
-Dynamic group automation based on user attributes
-
-Conditional Access policy configuration (MFA enforcement, platform conditions, Zero Trust controls)
-
-Policy validation using the What If simulation tool
-
-The goal is to show how organizations can scale identity lifecycle operations while maintaining strong security posture.
-
-🚀 1. Bulk User Upload in Entra ID
-Bulk upload allows administrators to create dozens or hundreds of users at once.
+1. Identity Provisioning via Bulk Upload
+Bulk upload allows administrators to create dozens or hundreds of users at once. This process requires a structured CSV file containing critical identity attributes.
 
 Preparing the CSV File
 Your CSV must include required fields such as:
@@ -36,90 +27,49 @@ usageLocation
 
 “The CSV file must include required columns like user principal name, display name, and additional attributes for Entra ID.” — from the PowerPoint
 
-📸 Screenshot:!![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/here_is_CSV_of_AD_users.png?raw=true)
+![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/here_is_CSV_of_AD_users.png?raw=true)
 
-📥 2. Executing the Bulk Upload
-Navigate to:
+Executing the Bulk Upload
+Navigate to Entra ID → Users → Bulk Operations → Bulk Create to upload the file.
 
-Entra ID → Users → Bulk Operations → Bulk Create
-
-Upload the CSV and validate the results.
-
-📸 Screenshot: Uploading the CSV File
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/Bulk_upload_csv_screenshot.png?raw=true)
 
 ✔ The CSV file was uploaded successfully.
-
-🔍 3. Post‑Upload Verification
-After the import completes:
-
-Review bulk operation logs
-
-Validate user attributes
-
-Confirm department values (critical for dynamic group rules)
-
-📸 Screenshot: Bulk Operation Results
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/bulk_upload_of_50%20users_success.png?raw=true))
 
-All users were created successfully.
+2. Dynamic Group Automation
+Dynamic groups automatically assign users based on attributes like department, eliminating manual overhead.
 
-👥 4. Dynamic Group Membership Rules
-Dynamic groups automatically assign users based on attributes such as department.
-
-IT Department Dynamic Group Rule
-txt
-(user.department -eq "IT")
-📸 Screenshot: IT Dynamic Group Rule
+IT Department Rule
+txt (user.department -eq "IT")
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/dynamic_query_for_IT_Department.png?raw=true)
 
-HR Department Dynamic Group Rule
-txt
-(user.department -eq "HR")
-📸 Screenshot: HR Dynamic Group Rule
+HR Department Rule
+txt (user.department -eq "HR")
+
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/human_resource_group_query_rules.png?raw=true)
 
-📸 Screenshot: Creating the HR Dynamic Group
-![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/human_resource_group_setup.png?raw=true)
+3. Conditional Access & MFA Enforcement
+Conditional Access enforces Zero Trust principles by requiring MFA or specific conditions before granting access. This lab includes a policy that enforces MFA for all targeted users.
 
-📸 Screenshot: IT Department Group Properties
-![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/IT_Group_Setup.png?raw=true)
-🛡️ 5. Conditional Access Policy Configuration
-Conditional Access enforces Zero Trust principles by requiring MFA, compliant devices, or specific conditions before granting access.
+Targeting and Conditions
+Policies can target dynamic groups and filter by device platforms such as Windows, macOS, iOS, or Android.
 
-This lab includes a policy that enforces MFA for all targeted users.
-
-🎯 6. Targeting Imported Users
-Policies can target:
-
-Dynamic groups (recommended)
-
-Individual users
-
-Directory roles
-
-Guest/external users
-
-📸 Screenshot: Policy Targeting Groups
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/Enforcing%20MFA%20FOR%20ALL%20IT%20USERS.png?raw=true)
-
-📱 7. Configuring Device Platform Conditions
-Conditional Access allows filtering by device platform (Windows, macOS, iOS, Android, etc.).
-
-📸 Screenshot: Device Platform Condition
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/mfa_setup_properties.png?raw=true)
 
-🔐 8. MFA Enforcement
-MFA significantly reduces credential‑based attacks.
 
-“Organizations enforcing MFA experience over 99.9% reduction in credential-based attacks.” — from the PowerPoint
+📸 Screenshot: Device Platform Conditions
 
-🧪 9. Validating Policies with the ‘What If’ Tool
-The What If tool simulates sign‑in scenarios to test Conditional Access policies before deployment.
+4. Verification with the ‘What If’ Tool
+The What If tool simulates sign-in scenarios to test Conditional Access policies before deployment. This confirms that the MFA policy applies correctly to the imported users.
 
-📸 Screenshot: What If Tool Showing MFA Policy Applied
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/Enforced%20MFA%20for%20all%20users%20and%20groups.png?raw=true)
 
-This confirms that the MFA policy applies correctly to the imported users.
+Security Considerations
+MFA Impact: Organizations enforcing MFA experience over a 99.9% reduction in credential-based attacks.
+
+Dynamic Accuracy: Ensure user attributes (like department) are accurately populated in the CSV to ensure correct group placement.
+
 
 
