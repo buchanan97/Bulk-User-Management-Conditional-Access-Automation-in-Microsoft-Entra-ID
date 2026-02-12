@@ -5,27 +5,42 @@ This project demonstrates a comprehensive identity-management workflow within Mi
 🎬 [Watch Me Build This Lab ](https://www.loom.com/share/075e945b42e04de192fb67e2336b96c1)
 📊 [Presentation Walkthrough](https://docs.google.com/presentation/d/13plL8oJUnhl0lsL6VIrshJrWo10i65YvEBj5mNTl2s8/edit?usp=sharing)
 
+Objective
+Execute bulk user onboarding using CSV import tools.
 
-1. Automated Identity Provisioning
-Bulk upload functionality allows administrators to create hundreds of users simultaneously, ensuring efficiency and consistency across the tenant.
+Automate dynamic group memberships based on specific user attributes.
 
-CSV Preparation
-The process begins by preparing a CSV file containing essential user attributes. These attributes are not only necessary for account creation but also serve as the foundation for automated grouping later in the workflow. Required fields include:
+Configure Conditional Access policies for MFA enforcement and Zero Trust controls.
 
-userPrincipalName: The unique identifier for the user.
+Validate security policies using the "What If" simulation tool.
 
-displayName: The user's full name as it appears in the directory.
+Tools Used
+Microsoft Entra ID: Primary directory service and identity provider.
 
-passwordProfile: Initial credential settings.
+Microsoft Entra Conditional Access: Policy engine for Zero Trust enforcement.
 
-department: Critical for attribute-based automation.
+What If Tool: Simulation engine for policy validation.
 
-usageLocation: Required for assigning licenses.
+CSV/Excel: For structured bulk data management.
 
-Execution & Verification
-By navigating to Entra ID → Users → Bulk Operations → Bulk Create, the CSV is uploaded and processed by Microsoft's backend services. Once complete, administrators must verify the bulk operation logs to ensure all identities were created successfully without errors.
+Process Walkthrough
+1. Identity Provisioning via Bulk Upload
+Bulk upload allows administrators to create dozens or hundreds of users simultaneously. This phase ensures efficiency and consistency across the tenant by utilizing a structured CSV file.
 
-“The CSV file must include required columns like user principal name, display name, and additional attributes for Entra ID.” — from the PowerPoint
+Required CSV Attributes:
+
+userPrincipalName: Unique identifier.
+
+displayName: User's full name.
+
+passwordProfile: Initial login settings.
+
+department: Required for attribute-based grouping.
+
+usageLocation: Needed for license assignments.
+
+2. Executing the Bulk Create
+The file is uploaded through Entra ID → Users → Bulk Operations → Bulk Create. After the process completes, operation logs are reviewed to confirm the successful creation of all users and their respective attributes.
 
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/here_is_CSV_of_AD_users.png?raw=true)
 
@@ -37,8 +52,8 @@ Navigate to Entra ID → Users → Bulk Operations → Bulk Create to upload the
 ✔ The CSV file was uploaded successfully.
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/bulk_upload_of_50%20users_success.png?raw=true)
 
-2. Dynamic Group Automation
-Dynamic groups eliminate the need for manual membership management by using rules that automatically add or remove users based on their directory attributes.
+3. Dynamic Group Automation
+Dynamic groups eliminate manual administrative overhead by automatically assigning users to groups based on their department attribute.
 
 Rule Logic
 In this lab, users are automatically sorted into departments based on the department value provided during the bulk upload:
@@ -52,7 +67,7 @@ txt (user.department -eq "HR")
 
 ![Image Alt](https://github.com/buchanan97/Bulk-User-Management-Conditional-Access-Automation-in-Microsoft-Entra-ID/blob/main/human_resource_group_query_rules.png?raw=true)
 
-3. Conditional Access Policy Configuration
+4. Conditional Access Policy Configuration
 Conditional Access serves as the Zero Trust policy engine, evaluating signals (like who the user is and what device they are using) before granting access to resources.
 
 Multi-Factor Authentication (MFA) Enforcement
