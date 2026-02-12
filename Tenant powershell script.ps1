@@ -11,8 +11,8 @@
 # Tenant Configuration
 # -------------------------------
 $tenantId = "11d4f510-c7f2-43ad-b9f3-c08f6dda6e12"
-$domain   = "Examsandbox.onmicrosoft.com"
-$csvPath  = "C:\Users\scorp\OneDrive\Documents\programming_scripts_for_cybersecurity\IAM EntraID personal lab project\Entra_Bulk_Import_Examsandbox.csv"
+$domain   = "Examsandbox.onmicrosoft.com" #you need to use your own credentials in my case I used tenant domain
+$csvPath  = "C:\Users\scorp\OneDrive\Documents\programming_scripts_for_cybersecurity\IAM EntraID personal lab project\Entra_Bulk_Import_Examsandbox.csv" 
 
 # -------------------------------
 # Connect to Microsoft Graph
